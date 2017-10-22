@@ -1,0 +1,258 @@
+.main-nav {
+  width: 100%;
+  position: relative;
+
+  margin-bottom: 20px;
+
+  background-color: rgba(0,0,0,0.4);
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  display: block;
+  width: 63px;
+  height: 58px;
+
+  font-size: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 6px;
+
+  width: 47px;
+  height: 4px;
+
+  background-color: #ffffff;
+  box-shadow: 0 12px 0 0 #ffffff,
+  0 24px 0 0 #ffffff;
+
+}
+
+.main-nav--closed .main-nav__toggle:hover::before {
+  background-color: #D22856;
+  box-shadow: 0 12px 0 0 #D22856,
+  0 24px 0 0 #D22856;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: rgba(210,40,86,0.4);
+  box-shadow: 0 12px 0 0 rgba(210,40,86,0.4),
+  0 24px 0 0 rgba(210,40,86,0.4);
+}
+
+.main-nav--open .main-nav__toggle {
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 13px;
+
+    width: 37px;
+    height: 5px;
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav--open .main-nav__toggle:hover::before,
+.main-nav--open .main-nav__toggle:hover::after {
+  background-color: #D22856;
+}
+
+.main-nav--open .main-nav__toggle:active::before,
+.main-nav--open .main-nav__toggle:active::after {
+  background-color: rgba(210,40,86,0.4);
+}
+
+.main-nav--closed .main-nav__toggle {
+  background-color: transparent;
+}
+
+.main-nav--open.main-nav {
+  background-color: @bg-blue;
+}
+
+.main-nav__list {
+  position: absolute;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+
+  list-style: none;
+}
+
+.main-nav__item {
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #485461;
+
+  background-color: @bg-blue;
+}
+
+.main-nav__item a {
+  display: block;
+
+  padding: 16px 0;
+
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #ffffff;
+
+  text-align: center;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  outline: none;
+}
+
+.main-nav__logo {
+  width: 100px;
+  height: 27px;
+  padding: 16px;
+}
+
+.main-nav__logo-link {
+  outline: none;
+  border: none;
+}
+
+.main-nav__logo--tablet,
+.main-nav__logo--desktop {
+  display: none;
+}
+
+@media @mobile-widths-only,
+@tablet-widths-only {
+  .main-nav--closed .main-nav__item {
+    display: none;
+  }
+
+  .main-nav--closed .main-nav__item-logo {
+    display: block;
+  }
+
+
+  .main-nav__item {
+
+    &:hover {
+      background-color: #485461;
+    }
+
+    &:active {
+      background-color: #1d2631;
+    }
+  }
+
+  .main-nav__item--active {
+    &:hover {
+      background-color: @bg-blue;
+    }
+  }
+}
+
+.main-nav--nojs .main-nav__toggle {
+  display: none;
+}
+
+.main-nav--nojs .main-nav__item {
+  display: block;
+}
+
+@media @tablet-widths {
+
+  .main-nav {
+    min-height: 115px;
+  }
+
+  .main-nav__toggle {
+    top: 32px;
+    right: 15px;
+  }
+
+  .main-nav__logo {
+    width: 150px;
+    margin-left: 20px;
+    padding-top: 35px;
+  }
+
+  .main-nav__list {
+    top: 115px;
+  }
+}
+
+@media @desktop-widths {
+
+  .main-nav {
+    display: flex;
+  }
+
+  .main-nav__wrapper {
+    .container-fluid();
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .main-nav__list {
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .main-nav__item {
+    margin-right: 30px;
+    margin-top: 25px;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  .main-nav__item a {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: none;
+  }
+
+  .main-nav__item a[href]:hover {
+    padding-bottom: 0px;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .main-nav__item a[href]:active {
+    padding-bottom: 0px;
+
+    color: #D22856;
+    border-bottom: 2px solid #D22856;
+  }
+
+  .main-nav__logo {
+    margin-right: 200px;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+
+}

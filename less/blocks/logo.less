@@ -1,0 +1,62 @@
+.logo__tablet,
+.logo__desktop {
+  display: none;
+}
+
+@media @tablet-widths {
+
+  .logo__mobile {
+    display: none;
+  }
+
+  .logo__tablet {
+    display: block;
+  }
+
+  .logo__tablet:hover .logo__tablet-glass {
+    fill: #D22856;
+  }
+
+  .logo__tablet-glass {
+    fill: #ffffff;
+  }
+
+  .logo__tablet-glass--footer{
+    fill: #D22856;
+  }
+}
+
+@media @desktop-widths {
+
+  .logo__tablet {
+    display: none;
+  }
+
+  .logo__desktop {
+    display: block;
+  }
+
+  .logo__desktop-glass {
+    fill: #ffffff;
+  }
+
+  .logo__desktop-glass--footer {
+    fill: #D22856;
+  }
+
+  .logo__desktop:hover .logo__desktop-glass {
+    fill: #D22856;
+  }
+
+  .logo__desktop-stars {
+    fill: #D22856;
+  }
+
+  .logo__desktop-stars--footer {
+    fill: @bg-blue
+  }
+
+  .logo__desktop:hover .logo__desktop-stars {
+    fill: #ffffff;
+  }
+}

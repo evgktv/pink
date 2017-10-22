@@ -1,0 +1,101 @@
+.review {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.review__wrapper {
+  .container-fluid();
+}
+
+.review__item {
+  text-align: center;
+}
+
+.review__name {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.review__text {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #333333;
+}
+
+.review__info {
+  display: none;
+}
+
+@media @tablet-widths {
+
+  .review {
+    position: relative;
+    padding-top: 100px;
+  }
+
+  .review__item {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .review__name {
+    margin: 0;
+    margin-top: 30px;
+
+    font-size: 24px;
+  }
+
+  .review__text {
+    font-size: 21px;
+  }
+
+  .review__info {
+    display: block;
+    margin: 0;
+    margin-top: 10px;
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #333333;
+  }
+}
+
+@media @desktop-widths {
+
+  .review {
+    padding-top: 200px;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      width: 79px;
+      height: 64px;
+
+      top: 70px;
+      left: 50%;
+      margin-left: -40px;
+
+      background: url("../img/icons/quotes.svg") center no-repeat;
+    }
+  }
+
+  .review__text {
+    quotes: none;
+  }
+
+  .review__item {
+    padding: 0 150px;
+  }
+}

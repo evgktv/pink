@@ -1,0 +1,25 @@
+.slider__slide {
+  display: none;
+}
+
+.slider__slide--active {
+  display: block;
+}
+
+.slider__toggle {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+}
+
+@media @tablet-widths {
+
+  .slider__slide {
+    display: none;
+  }
+
+  .slider__slide--active {
+    display: flex;
+  }
+}

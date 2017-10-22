@@ -1,0 +1,34 @@
+.text-intro {
+  position: relative;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.text-intro__wrapper {
+  .container-fluid();
+}
+
+.text-intro__slogan {
+  text-align: center;
+}
+
+.text-intro__text {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  color: @bg-blue;
+}
+
+@media @tablet-widths {
+
+  .text-intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .text-intro__text {
+    font-size: 21px;
+  }
+}
